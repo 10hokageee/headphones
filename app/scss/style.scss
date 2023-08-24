@@ -1,6 +1,137 @@
-@import 'vars';
-@import 'fonts';
-@import 'global';
-@import 'media';
-@import 'reset';
-@import 'libs';
+@import "vars";
+@import "fonts";
+@import "global";
+@import "media";
+@import "reset";
+@import "mixin";
+@import "libs";
+
+.header {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 146, 146, 1) 0%,
+    rgba(222, 81, 80, 1) 35%
+  );
+  min-height: 100vh;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-image: url("../images/header-bg.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+    inset: 0;
+    opacity: 0.6;
+  }
+}
+
+.header-top {
+  padding: 50px 0;
+  z-index: 15;
+  position: relative;
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__list-item:not(:last-child) {
+    padding: 0 32px;
+    border-right: 2px solid rgba(255, 255, 255, 0.5);
+  }
+
+  &__list-item:last-child {
+    padding-left: 32px;
+  }
+
+  &__list-link {
+    width: 47px;
+    height: 47px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      stroke-width: 2px;
+      stroke: #ff4948;
+      fill: none;
+    }
+  }
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  color: #fff;
+
+  &__info{
+    max-width: 517px;
+  }  
+
+  &__img {
+    margin-right: 95px;
+  }
+
+  &__subtitle {
+    font-size: 22px;
+    @extend %rubik-500;
+    line-height: 140%;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    @extend %rubik-700;
+    font-size: 99.17px;
+    line-height: 100%;
+    text-transform: uppercase;
+    margin-bottom: 45px;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+  }
+
+  &__price-new {
+    @extend %rubik-700;
+    font-size: 44px;
+    line-height: 130%;
+    padding-right: 30px;
+    border-right: 2px solid #fff;
+  }
+
+  &__price-old {
+    @extend %rubik-500;
+    padding-left: 30px;
+    font-size: 31px;
+    line-height: 140%;
+    text-decoration: line-through;
+    opacity: 0.7;
+  }
+
+  &__btn {
+    padding: 16px 46px;
+    border-radius: 62px;
+    background-color: #fff;
+    color: #ff4948;
+    font-size: 22px;
+    @extend %rubik-500;
+    line-height: 140%; 
+  }
+}

@@ -1,0 +1,21 @@
+@import "mixin";
+
+$burgerWidth: 38px; 
+$burgerHeight: 25px; 
+$burgerLineHeight: 2px; 
+$burgerColor: #ffffff; 
+
+%rubik-400 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+}
+
+%rubik-500 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+}
+
+%rubik-700 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+}
